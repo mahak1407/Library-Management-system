@@ -1,0 +1,30 @@
+<!-- views/verify-otp.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Verify OTP</title>
+  <link rel="stylesheet" href="./style/style2.css">
+</head>
+<body>
+  <h2>Reset Password</h2>
+
+  <% if (message) { %>
+    <p style="color: green;"><%= message %></p>
+  <% } %>
+
+  <form action="/verifyOtp" method="POST">
+    <label>Email</label>
+    <input type="email" name="email" required>
+
+    <label>Enter OTP</label>
+    <input type="text" name="otp" required>
+
+    <label>New Password</label>
+    <input type="password" name="password" required>
+
+    <button type="submit">Reset Password</button>
+  </form>
+
+  <p><a href="/login">Back to Login</a></p>
+</body>
+</html>

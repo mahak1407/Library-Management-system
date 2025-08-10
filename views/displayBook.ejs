@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Display Books</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+    <center>
+        <h1>View Books</h1>
+        <form action="/displayBook" method="post" class="display_contain">
+            <label for="book_id">Book Id:</label>
+            <input type="text" name="book_id" id="book_id"><br><br>
+            <button type="submit">Show</button>
+            <button type="submit" name="DisplayAll" value="true">Show All Books</button>
+            <button type="button" onclick="window.location.href = '/book'">BACK</button>
+        </form>
+
+        <% if (message1) { %>
+            <div style="color:red">
+                <%= message1 %>
+            </div>
+            <% } %>
+
+                <% if (message2) { %>
+                    <div style="color:green">
+                        <%= message2 %>
+                    </div>
+                    <% } %>
+
+                        <% if (book) { %>
+                            <table border="1">
+                                <tr>
+                                    <th>Book ID</th>
+                                    <th>Title</th>
+                                    <th>Genre</th>
+                                    <th>Publication Year</th>
+                                    <th>Author Name</th>
+                                    <th>Author ID</th>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <%= book.BookId %>
+                                    </td>
+                                    <td>
+                                        <%= book.Title %>
+                                    </td>
+                                    <td>
+                                        <%= book.Genre %>
+                                    </td>
+                                    <td>
+                                        <%= book.Publication_Year %>
+                                    </td>
+                                    <td>
+                                        <%= book.authId ? book.authId.Name : 'N/A' %>
+                                    </td>
+                                    <td>
+                                        <%= book.authId.AuthorId %>
+                                    </td>
+                                </tr>
+                            </table>
+                            <% } %>
+
+                                <% if (books && books.length> 0) { %>
+                                    <table border="1">
+                                        <tr>
+                                            <th>Book ID</th>
+                                            <th>Title</th>
+                                            <th>Genre</th>
+                                            <th>Publication Year</th>
+                                            <th>Author Name</th>
+                                            <th>Author ID</th>
+
+                                        </tr>
+                                        <% books.forEach(function(book) { %>
+                                            <tr>
+                                                <td>
+                                                    <%= book.BookId %>
+                                                </td>
+                                                <td>
+                                                    <%= book.Title %>
+                                                </td>
+                                                <td>
+                                                    <%= book.Genre %>
+                                                </td>
+                                                <td>
+                                                    <%= book.Publication_Year %>
+                                                </td>
+
+
+                                                <td>
+                                                    <%= book.authId ? book.authId.Name : 'N/A' %>
+                                                </td>
+                                                <td>
+                                                    <%= book.authId.AuthorId %>
+                                                </td>
+                                            </tr>
+                                            <% }); %>
+                                    </table>
+                                    <% } %>
+    </center>
+</body>
+
+</html>

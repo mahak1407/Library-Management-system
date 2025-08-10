@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Update Book</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body class="contain">
+    <h2>Update Book</h2>
+    <form action="" method="post">
+        <label>Book ID:</label>
+        <input type="text" name="book_id" required><br>
+        <label>Title:</label>
+        <input type="text" name="title"><br>
+        <label>Genre:</label>
+        <input type="text" name="genre"><br>
+        <label>Pub. Year:</label>
+        <input type="number" name="publication_year" min="1800" max="2025"><br>
+        <button type="submit">Update Book</button>
+        <button onclick="window.location.href = '/book'">BACK</button><br><br>
+        <% if (message1) { %>
+            <div style="color:red">
+                <%= message1 %>
+            </div>
+            <% } %>
+                <% if (message2) { %>
+                    <div style="color:green">
+                        <%= message2 %>
+                    </div>
+                    <% } %>
+    </form>
+</body>
+
+</html>

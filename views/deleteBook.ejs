@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Delete Book</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body class="contain">
+    <h2>Delete Book</h2>
+    <form action="" method="post">
+        <label>Book ID:</label>
+        <input type="text" name="book_id" required><br>
+        <button type="submit">Delete Book</button>
+        <button onclick="window.location.href = '/book'">BACK</button><br><br>
+        <% if (message1) { %>
+            <div style="color:red">
+                <%= message1 %>
+            </div>
+            <% } %>
+                <% if (message2) { %>
+                    <div style="color:green">
+                        <%= message2 %>
+                    </div>
+                    <% } %>
+    </form>
+</body>
+
+</html>

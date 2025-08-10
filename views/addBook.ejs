@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Add Book</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body class="contain">
+    <h2>Add Book</h2>
+    <form action="/addBook" method="post">
+        <label for="book_id">Book ID:</label>
+        <input type="text" name="book_id" required><br>
+        <label>Title:</label>
+        <input type="text" name="title" required><br>
+        <label>Genre:</label>
+        <input type="text" name="genre" required><br>
+        <label>Publication Year:</label>
+        <input type="number" name="publication_year" min="1800" max="2025" required><br>
+        <label for="author_id">Author ID:</label>
+        <input type="text" name="author_id"><br>
+        <button type="submit">Add Book</button>
+        <button onclick="window.location.href = '/book'">BACK</button><br><br>
+        <% if (message1) { %>
+            <div style="color:red">
+                <%= message1 %>
+            </div>
+            <% } %>
+                <% if (message2) { %>
+                    <div style="color:green">
+                        <%= message2 %>
+                    </div>
+                    <% } %>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Display Authors</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+    <center>
+        <h1>View Authors</h1>
+        <form action="/displayAuthor" method="post" class="display_contain">
+            <label for="author_id">Author Id:</label>
+            <input type="text" name="author_id" id="author_id"><br><br>
+            <button type="submit">Show</button>
+            <button type="submit" name="DisplayAll" value="true">Show All Authors</button>
+            <button type="button" onclick="window.location.href = '/author'">BACK</button>
+        </form>
+
+        <% if (message1) { %>
+            <div style="color:red">
+                <%= message1 %>
+            </div>
+            <% } %>
+
+                <% if (message2) { %>
+                    <div style="color:green">
+                        <%= message2 %>
+                    </div>
+                    <% } %>
+
+
+                        <% if (author) { %>
+                            <table border="1">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Bio</th>
+                                    <th>Nationality</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <%= author.AuthorId %>
+                                    </td>
+                                    <td>
+                                        <%= author.Name %>
+                                    </td>
+                                    <td>
+                                        <%= author.Bio %>
+                                    </td>
+                                    <td>
+                                        <%= author.Nationality %>
+                                    </td>
+                                </tr>
+                            </table>
+                            <% } %>
+                                <% if (authors && authors.length> 0) { %>
+                                    <h3>All Authors</h3>
+                                    <table border="1">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Bio</th>
+                                            <th>Nationality</th>
+                                        </tr>
+                                        <% authors.forEach(function(author) { %>
+                                            <tr>
+                                                <td>
+                                                    <%= author.AuthorId %>
+                                                </td>
+                                                <td>
+                                                    <%= author.Name %>
+                                                </td>
+                                                <td>
+                                                    <%= author.Bio %>
+                                                </td>
+                                                <td>
+                                                    <%= author.Nationality %>
+                                                </td>
+                                            </tr>
+                                            <% }); %>
+                                    </table>
+                                    <% } %>
+    </center>
+</body>
+
+</html>

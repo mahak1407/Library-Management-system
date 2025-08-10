@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Update Author</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body class="contain">
+    <h2>Update Author</h2>
+    <form action="" method="post">
+        <label>Author ID:</label>
+        <input type="text" name="author_id" required><br>
+        <label>Name:</label>
+        <input type="text" name="name"><br>
+        <label>Bio:</label>
+        <input type="text" name="bio"><br>
+        <label>Nationality:</label>
+        <input type="text" name="nationality"><br>
+        <button type="submit">Update Author</button>
+        <button onclick="window.location.href = '/author'">BACK</button><br><br>
+        <% if (message1) { %>
+            <div style="color:red">
+                <%= message1 %>
+            </div>
+            <% } %>
+                <% if (message2) { %>
+                    <div style="color:green">
+                        <%= message2 %>
+                    </div>
+                    <% } %>
+    </form>
+</body>
+
+</html>
